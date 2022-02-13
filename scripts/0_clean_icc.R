@@ -26,13 +26,13 @@ df = df_icc %>%
         ESTUDIO, year = AÑO, month =  MES, 
         #Items
         it_sit_eco_hh_current =    if_else(is.na(B.2.2), B.2.1,B.2.2),
-        it_sit_eco_hh_current =    na_if(x = it_sit_eco_hh_current, 8 ) %>% na_if(9) ,
+        it_sit_eco_hh_current =    na_if(x = it_sit_eco_hh_current, 8 ) %>% na_if(9),
         it_sit_eco_hh_retro =      if_else(is.na(B.3.2), B.3.1,B.3.2),
-        it_sit_eco_hh_retro =      na_if(x = it_sit_eco_hh_retro, 8 ) %>% na_if(9) ,
+        it_sit_eco_hh_retro =      na_if(x = it_sit_eco_hh_retro, 8 ) %>% na_if(9),
         it_unem_around_n =         na_if(x =  B.4, 999 ),
         it_unem_around_retro =     na_if(x = B.5, 8 ) %>% na_if(9) ,
-        it_unem_findjob_retro =    na_if(x = B.6, 8 ) %>% na_if(9)  ,
-        it_sit_eco_general_retro = na_if(x = B.7, 8 ) %>% na_if(9)   ,
+        it_unem_findjob_retro =    na_if(x = B.6, 8 ) %>% na_if(9),
+        it_sit_eco_general_retro = na_if(x = B.7, 8 ) %>% na_if(9),
         it_inflation_pro =         na_if(x = D.1, 8 ) %>% na_if(9),
         it_interest_pro =          if_else(is.na(D.2.2), D.2.1,D.2.2),
         it_interest_pro =          na_if(x = it_interest_pro, 8 ) %>% na_if(9) ,
@@ -43,8 +43,8 @@ df = df_icc %>%
         it_durable_pro_1y =        na_if(x = C.2, 8 ) %>% na_if(9) ,
         it_saving_pro_1y =         na_if(x = C.3, 8 ) %>% na_if(9) ,
         it_sit_eco_hh_pro =        if_else(is.na(C.4.2), C.4.1,C.4.2),
-        it_sit_eco_hh_pro =        na_if(x = it_sit_eco_hh_pro, 8 ) %>% na_if(9) ,
-        it_sit_eco_general_pro =   na_if(x = C.5, 8 ) %>% na_if(9) ,
+        it_sit_eco_hh_pro =        na_if(x = it_sit_eco_hh_pro, 8 ) %>% na_if(9),
+        it_sit_eco_general_pro =   na_if(x = C.5, 8 ) %>% na_if(9),
         #Political variables#
         ideology =                 na_if(x = F.1, 99) %>%  na_if(98),
         #Covariates#
@@ -104,7 +104,7 @@ df = df %>%
 #11                                                          Otros    0
 
 df$d_edu_cat = "10000"
-df$d_edu_cat[df$d_edu %in% 1:3 ] <- "0 Primary"
+df$d_edu_cat[df$d_edu %in% 0:3 ] <- "0 Primary"
 df$d_edu_cat[df$d_edu %in%c(4) ] <- "1 Lower sec."
 df$d_edu_cat[df$d_edu %in%c(5,6,7,11) ] <- "2 Upper sec."
 df$d_edu_cat[df$d_edu %in%c(8:10) ] <- "3 Tertiary"
@@ -130,16 +130,12 @@ df$d_edu_cat%>%table
 #16                                               Otros estudios
 #98                                             N.S./No recuerda
 #99                                                         N.C.
-df$d_edu_cat[df$d_edu_2 %in% 1:3 ] <- "0 Primary"
+df$d_edu_cat[df$d_edu_2 %in% 0:3 ] <- "0 Primary"
 df$d_edu_cat[df$d_edu_2 %in%c(4) ] <- "1 Lower sec."
 df$d_edu_cat[df$d_edu_2 %in%c(5,6,7,16) ] <- "2 Upper sec."
-df$d_edu_cat[df$d_edu_2 %in%c(8:13) ] <- "3 Tertiary"
-df$d_edu_cat[is.na(df$d_edu_2) ] <- NA
+df$d_edu_cat[df$d_edu_2 %in%c(8:15) ] <- "3 Tertiary"
 
-
-df$d_edu_cat%>%table
-
-
+df$d_edu_2%>%table
 
 #Check
 (table(df$d_edu_cat) /length(df$d_edu_cat)) %>%round(digits = 4)*100
