@@ -53,3 +53,20 @@ We agreed on starting working after Christmas and allocate time to that time. We
       - Predict poverty or income inequality 
 
 
+######
+######
+######Meeting February 13 ####
+
+- Comentamos los resultados de las regresiones que había hecho OJM para las principales variables (precios de la vivienda; expectativa inflación, situación económica del hogar y situación del mercado laboral ). En algunos casos 
+- El enfoque del documento sería caracterizar bajo qué condiciones se puede utilizar una encuesta no representativa como la ICC, y cuando puede ayudar usar información auxiliar para corregir ese sesgo. Es necesario que ocurran dos cosas:
+  1. Que las variables auxiliares X influyan en la variable dependiente. Esto dependerá típicamente del item que estemos viendo y de las variables auxiliares. Mientras que los demográficos poco efecto, nosotros esperamos que las variable política tengan efecto y queremos mostrar que es así.
+  2. Que exista un imbalance (o variación a lo largo del tiempo) en las variables auxiliares, por no respuesta o undersampling.
+
+En ese caso es posible corregir el sesgo mediante la poestratificación (especialmente si los efectos son no linear o no varían por provincia) o el raking (si el e)
+  
+Lo que queremos documentar es a) cuando existe un problema de representatividad que se pueda corregir y b) la mejor forma de corregir. 
+
+Para la próxima semana: 
+- OJM se encargará de ahondar en la parte 1 (ver el efecto de la ideología o el voto, de la situación laboral, y documentar como varía por personas). 
+- LMG se encargará de documentar 2. -caracterizar el imbalance entre variables en el ICC y la EPA, y también su variación a lo largo del tiempo. 
+
