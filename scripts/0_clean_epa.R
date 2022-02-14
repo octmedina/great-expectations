@@ -2,7 +2,6 @@
 library(tidyverse)
 library(data.table)
 
-df%>%glimpse
 
 vfiles = list.files('data/epa_files/');
 vzip_files =vfiles[str_detect(vfiles, 'zip')]
